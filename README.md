@@ -24,3 +24,9 @@ Test D&R Rule
 
 D&R Detection
 ![image](https://github.com/user-attachments/assets/e90d9c8c-6513-42c6-9eb6-394411e533b9)
+
+Create Output to Tines Webhook
+![image](https://github.com/user-attachments/assets/7208556a-a179-4fa4-8863-e751b5529254)
+
+Check detection events coming through to Tines
+![image](https://github.com/user-attachments/assets/445b4780-8f57-4ace-a617-a2db92ec39d9)
