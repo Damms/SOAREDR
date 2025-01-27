@@ -1,10 +1,12 @@
 # SOAREDR
 
 # SOAR EDR Project
-This project is based on the resources provided by [MyDFIR@](https://www.mydfir.com/)
+This project is based on the resources provided by [@MyDFIR](https://www.mydfir.com/)
 
 ## Objective
-In this project I will grow my cybersecurity skill set by integrating SOAR and EDR to automate security workflows
+In this project I will grow my cybersecurity skill set by integrating SOAR and EDR to automate security workflows.
+
+In this project, I will create a detection rule that triggers whenever Lazagne, a credential-harvesting software, runs on an endpoint. When the event is detected, an alert will be sent via Slack and email, prompting users to decide whether to isolate the affected machine. If isolation is selected, an automated workflow will then run to disconnect the machine from the rest of the network.
 
 ![image](https://github.com/user-attachments/assets/60f03015-0484-440f-8699-e96d7f6717e4)
 
@@ -57,7 +59,7 @@ hcp_win_x64_release_<sensor_version>.msi -i <installation_key>
 Install agent on server
 ![image](https://github.com/user-attachments/assets/20d1184c-1976-4541-aa11-eccd9f2dfab2)
 
-agent showing as sensor in LimaCharlie
+Server showing as sensor in LimaCharlie
 ![image](https://github.com/user-attachments/assets/fe5da546-22d0-45eb-addc-3cf88159b503)
 
 ### Step 4 - Download Lazagne to emulate attacks
