@@ -12,6 +12,8 @@ In this project, I will create a detection rule that triggers whenever Lazagne, 
 
 - Writing security stories
 - Writing detection rules
+- Threat detection and analysis 
+- Endpoint security and monitoring
 - Integrating EDR to SOAR platform
 - Creating automated security workflows
 
