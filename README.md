@@ -160,6 +160,9 @@ Check detection events coming through to Tines
 
 ![image](https://github.com/user-attachments/assets/643c72c1-d9c2-4fd4-9788-5fb860caeef3)
 
+![image](https://github.com/user-attachments/assets/dbe15d5a-3a85-465f-baa8-044b01ed078a)
+
+
 ### Step 9 - Add event details to user prompt and slack message
 
 - Open events in Tines to get name of fields we want to include in message
@@ -192,7 +195,8 @@ Check detection events coming through to Tines
 ![image](https://github.com/user-attachments/assets/f9a15fe5-6370-426c-a2aa-c1bf8b399871)
 
 
-Now it has isolated go into machine and try ping to validate machine is isolated
+- Now it has isolated go into machine and try ping to validate machine is isolated
+- 
 ![image](https://github.com/user-attachments/assets/44765354-76a8-4318-837c-ddc1eeb42254)
 
 
