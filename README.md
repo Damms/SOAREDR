@@ -29,12 +29,28 @@ In this project I will grow my cybersecurity skill set by integrating SOAR and E
 
 ## Steps
 
-### Step 1 - Spin Up Windows Server
+### Step 1 - Create LimaCharlie account and organiztion space
+
+[LimaCharlie](https://limacharlie.io/)
+
+### Step 2 - Spin Up Windows Server
 
 The first step is to spin up a windows server to download the EDR agent onto and also to emulate attacks to generate security events. Spin up a virtual machine if your computer can handle the resource usage, otherwise you can use any cloud provider to spin up a window server.
 
+From previous projects I already have a Windows Server VM created so I will utilize that.
 
-### Step 2 - Install LimaCharlie agent on server
+
+### Step 3 - Install LimaCharlie agent on server
+
+On you windows server navigate to LimaCharlie and download the installer. https://docs.limacharlie.io/docs/windows-agent-installation
+
+Open powershell navigate to the installer and install via the below command
+
+hcp_win_x64_release_<sensor_version>.msi -i <installation_key>
+
+You can get the installation key from the LimaCharlie 
+
+![image](https://github.com/user-attachments/assets/ffe96147-067b-4742-bfae-e1ac58b3ac77)
 
 Install agent on server
 ![image](https://github.com/user-attachments/assets/20d1184c-1976-4541-aa11-eccd9f2dfab2)
@@ -42,7 +58,9 @@ Install agent on server
 agent showing as sensor in LimaCharlie
 ![image](https://github.com/user-attachments/assets/fe5da546-22d0-45eb-addc-3cf88159b503)
 
-### Step 3 - Download Lazagne to emulate attacks
+### Step 4 - Download Lazagne to emulate attacks
+
+Download Lazagne using the github link below, Lazagne will be used to perform password harvesting attacks on our local computer to generate security eventts.
 
 [Lazagne Github](https://github.com/AlessandroZ/LaZagne)
 
