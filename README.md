@@ -24,7 +24,7 @@ In this project I will grow my cybersecurity skill set by integrating SOAR and E
 - [Lazagne](https://github.com/AlessandroZ/LaZagne)
 
 ### Prerequisites 
-- Ability to create virtual machine or spin up server in the cloud to download EDR agent onto and perform emulated attacks on to generate security events.
+- Ability to create virtual machine or spin up server in the cloud
 
 
 ## Steps
