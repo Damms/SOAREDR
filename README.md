@@ -200,7 +200,7 @@ Check detection events coming through to Tines
 
 ![image](https://github.com/user-attachments/assets/abcc9e69-bfa6-48b0-83cb-7fdbbb21215c)
 
-- Select isolate maching in prompt
+- Select isolate machine in prompt
 
 ![image](https://github.com/user-attachments/assets/107fd195-41f5-482d-b93d-5ce88cb4c954)
 
