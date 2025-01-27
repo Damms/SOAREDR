@@ -35,22 +35,22 @@ In this project I will grow my cybersecurity skill set by integrating SOAR and E
 
 ### Step 2 - Spin Up Windows Server
 
-The first step is to spin up a windows server to download the EDR agent onto and also to emulate attacks to generate security events. Spin up a virtual machine if your computer can handle the resource usage, otherwise you can use any cloud provider to spin up a window server.
+- The first step is to spin up a windows server to download the EDR agent onto and also to emulate attacks to generate security events. Spin up a virtual machine if your computer can handle the resource usage, otherwise you can use any cloud provider to spin up a window server.
 
-From previous projects I already have a Windows Server VM created so I will utilize that.
+- From previous projects I already have a Windows Server VM created so I will utilize that.
 
 
 ### Step 3 - Install LimaCharlie agent on server
 
-On you windows server navigate to LimaCharlie and download the installer. https://docs.limacharlie.io/docs/windows-agent-installation
+- On you windows server navigate to LimaCharlie and download the installer. https://docs.limacharlie.io/docs/windows-agent-installation
 
-Open powershell navigate to the installer and install via the below command
+- Open powershell navigate to the installer and install via the below command
 
 ```
 hcp_win_x64_release_<sensor_version>.msi -i <installation_key>
 ```
 
-You can get the installation key from the LimaCharlie 
+- You can get the installation key from the LimaCharlie 
 
 ![image](https://github.com/user-attachments/assets/ffe96147-067b-4742-bfae-e1ac58b3ac77)
 
@@ -62,21 +62,21 @@ agent showing as sensor in LimaCharlie
 
 ### Step 4 - Download Lazagne to emulate attacks
 
-Download Lazagne using the github link below, Lazagne will be used to perform password harvesting attacks on our local computer to generate security eventts.
+- Download Lazagne using the github link below, Lazagne will be used to perform password harvesting attacks on our local computer to generate security eventts.
 
 [Lazagne Github](https://github.com/AlessandroZ/LaZagne)
 
-Run the Lazagne exe to run the password harvesting attack and generate events.
+- Run the Lazagne exe to run the password harvesting attack and generate events.
 
 ![image](https://github.com/user-attachments/assets/949d6625-43ae-475a-ae59-3296b74a86b3)
 
 ### Step 5 - Create detection rule in LimaCharlie
 
-In LimaCharlie navigate to the timeline and view the security event that was generated and look at the details captured, we will use some of these details to write a detection rule.
+- In LimaCharlie navigate to the timeline and view the security event that was generated and look at the details captured, we will use some of these details to write a detection rule.
 
 ![image](https://github.com/user-attachments/assets/9655ce1c-0072-42b7-87e9-ed21b3a97d79)
 
-Navigate to automations > D&R Rules in LimaCharlie and create a rule, below is the rule.
+- Navigate to automations > D&R Rules in LimaCharlie and create a rule, below is the rule.
 
 Detect:
 ```
@@ -119,12 +119,12 @@ Respond:
 Create D&R Rule
 ![image](https://github.com/user-attachments/assets/f8a10531-0bdf-44af-88e4-32fe3c309a9d)
 
-Once we create the detection rule we can test the rule by copying the content of the security event we generated earlier.
+- Once we create the detection rule we can test the rule by copying the content of the security event we generated earlier.
 
 Test D&R Rule
 ![image](https://github.com/user-attachments/assets/2a9620d7-938a-42d3-a9be-f2512683cd6a)
 
-Now to confirm the detection is running as expected, head over to detections in LimaCharlie and we should see the events which is detected by the rule we just created.
+- Now to confirm the detection is running as expected, head over to detections in LimaCharlie and we should see the events which is detected by the rule we just created.
 
 ![image](https://github.com/user-attachments/assets/e90d9c8c-6513-42c6-9eb6-394411e533b9)
 
