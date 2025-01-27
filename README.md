@@ -68,14 +68,12 @@ Download Lazagne using the github link below, Lazagne will be used to perform pa
 
 Run the Lazagne exe to run the password harvesting attack and generate events.
 
-Lazagne
 ![image](https://github.com/user-attachments/assets/949d6625-43ae-475a-ae59-3296b74a86b3)
 
-### Step 4 - Create detection rule in LimaCharlie
+### Step 5 - Create detection rule in LimaCharlie
 
 In LimaCharlie navigate to the timeline and view the security event that was generated and look at the details captured, we will use some of these details to write a detection rule.
 
-Events
 ![image](https://github.com/user-attachments/assets/9655ce1c-0072-42b7-87e9-ed21b3a97d79)
 
 Navigate to automations > D&R Rules in LimaCharlie and create a rule, below is the rule.
@@ -90,32 +88,32 @@ rules:
   - op: is windows
   - op: or
     rules:
-    - case sensitive: false
-      op: ends with
-      path: event/FILE_PATH
-      value: LaZagne.exe
-    - case sensitive: false
-      op: contains
-      path: event/COMMAND_LINE
-      value: LaZagne
-    - case sensitive: false
-      op: is
-      path: event/HASH
-      value: '3cc5ee93a9ba1fc57389705283b760c8bd61f35e9398bbfa3210e2becf6d4b05'
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: LaZagne.exe
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: LaZagne
+      - case sensitive: false
+        op: is
+        path: event/HASH
+        value: 3cc5ee93a9ba1fc57389705283b760c8bd61f35e9398bbfa3210e2becf6d4b05
   ```
 
 Respond:
 ```
 - action: report
   metadata:
-    author: MyDFIR
+    author: JDAMMS
     description: TEST - Detects Lazagne Usage
     falsepositives:
-    - ToTheMoon
+      - ToTheMoon
     level: high
     tags:
-    - attack.credential_access
-  name: MyDFIR - HackTool - Lazagne
+      - attack.credential_access
+  name: JDAMMS - HackTool - Lazagne
 ```
 
 Create D&R Rule
@@ -128,22 +126,39 @@ Test D&R Rule
 
 Now to confirm the detection is running as expected, head over to detections in LimaCharlie and we should see the events which is detected by the rule we just created.
 
-D&R Detection
 ![image](https://github.com/user-attachments/assets/e90d9c8c-6513-42c6-9eb6-394411e533b9)
+
+### Step 6 - Connect LimaCharlie to Tines
+
+No it's time to connect LimaCharlie to Tines so we can automations that trigger off our detections.
+
+- In Tines create a webhook, copy that webhook URL
+
+- In LimaCharlie create an detection output that points to the tines webhook
 
 Create Output to Tines Webhook
 ![image](https://github.com/user-attachments/assets/7208556a-a179-4fa4-8863-e751b5529254)
 
+- Now that the output is created, check the webhook in Tines to confirm the detected events are coming through
+
 Check detection events coming through to Tines
 ![image](https://github.com/user-attachments/assets/445b4780-8f57-4ace-a617-a2db92ec39d9)
 
-Create connection to Slack
+### Step 7 - Connect LimaCharlie to Tines
+
+- Create connection to Slack via Tines
+
 ![image](https://github.com/user-attachments/assets/7522caa9-588d-4cc6-9335-391e8b241f63)
 
 ![image](https://github.com/user-attachments/assets/59c6a410-1971-43ff-b417-6e1b71ab0f4f)
 
-Test connection to Slack
+- Test connection to Slack
+  
 ![image](https://github.com/user-attachments/assets/d81d9189-8688-4f66-9ac0-84a194955242)
+
+### Step 8 - Create User Prompt to ask if user wants to isolate machine
+
+![image](https://github.com/user-attachments/assets/643c72c1-d9c2-4fd4-9788-5fb860caeef3)
 
 Open events in Tines to get name of fields we want to include in message
 ![image](https://github.com/user-attachments/assets/d34c0e48-4ed7-4db2-a806-3e051bfcc6a6)
@@ -157,7 +172,7 @@ Test Slack message with Details
 Setup Trigger if User prompt selects dont isolate which will trigger a slack message
 ![image](https://github.com/user-attachments/assets/0cec6d78-3fde-494b-a47f-61cfef24ac91)
 
-![image](https://github.com/user-attachments/assets/643c72c1-d9c2-4fd4-9788-5fb860caeef3)
+
 
 Create API request to isolate computer in LimaCharlie using sensor id - you must also create a Credential in Tines using LimaCharlie API Key
 ![image](https://github.com/user-attachments/assets/3e4cc0ea-1aad-47a3-a744-1632c8d7aef3)
