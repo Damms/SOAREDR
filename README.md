@@ -1,5 +1,3 @@
-# SOAREDR
-
 # SOAR EDR Project
 This project is based on the resources provided by [@MyDFIR](https://www.mydfir.com/)
 
