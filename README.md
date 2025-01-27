@@ -183,20 +183,30 @@ Check detection events coming through to Tines
 
 ### Step 10 - Create automation step to isolate machine va LimaCharlie
 
-- Create API request to isolate computer in LimaCharlie using sensor id - you must also create a Credential in Tines using LimaCharlie API Key
+- Create API post request to isolate computer in LimaCharlie using sensor id - you must also create a Credential in Tines using LimaCharlie API Key
 
 ![image](https://github.com/user-attachments/assets/3e4cc0ea-1aad-47a3-a744-1632c8d7aef3)
 
+- Create API get request to get the isolation status of the endpoint to confirm the isolation was successful
+
+![image](https://github.com/user-attachments/assets/4f6438bc-cc66-45f5-ace7-29c0c99812a6)
+
+
+### Step 11 - Test that the automation isolates the endpoint
 
 - Re-emit user prompt and check API is Isolating endpoint
+
+![image](https://github.com/user-attachments/assets/abcc9e69-bfa6-48b0-83cb-7fdbbb21215c)
+
+- Check LimaCharlie for endpoint status
 
 ![image](https://github.com/user-attachments/assets/28bcda53-437b-44ad-917f-15c482a0b59a)
 
 ![image](https://github.com/user-attachments/assets/f9a15fe5-6370-426c-a2aa-c1bf8b399871)
 
 
-- Now it has isolated go into machine and try ping to validate machine is isolated
-- 
+- Now it has isolated log into machine and try ping to validate machine is isolated
+  
 ![image](https://github.com/user-attachments/assets/44765354-76a8-4318-837c-ddc1eeb42254)
 
 
