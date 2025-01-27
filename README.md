@@ -1,17 +1,50 @@
 # SOAREDR
 
+# SOAR EDR Project
+This project is based on the resources provided by [MyDFIR@](https://www.mydfir.com/)
+
+## Objective
+In this project I will grow my cybersecurity skill set by integrating SOAR and EDR to automate security workflows
+
 ![image](https://github.com/user-attachments/assets/60f03015-0484-440f-8699-e96d7f6717e4)
 
+### Skills Learned
+
+- Writing security stories
+- Writing detection rules
+- Integrating EDR to SOAR platform
+- Creating automated security workflows
+
+### Tools Used
+
+- LimaCharlie (EDR)
+- Tines (SOAR)
+- Slack
+- Virtual Machines (VMWare Workstation)
+- [Lazagne](https://github.com/AlessandroZ/LaZagne)
+
+### Prerequisites 
+- Ability to create virtual machine or spin up server in the cloud to download EDR agent onto and perform emulated attacks on to generate security events.
+
+
+## Steps
+
+### Step 1 - Spin Up Windows Server
+
+The first step is to spin up a windows server to download the EDR agent onto and also to emulate attacks to generate security events. Spin up a virtual machine if your computer can handle the resource usage, otherwise you can use any cloud provider to spin up a window server.
+
+
+### Step 2 - Install LimaCharlie agent on server
 
 Install agent on server
 ![image](https://github.com/user-attachments/assets/20d1184c-1976-4541-aa11-eccd9f2dfab2)
 
-
 agent showing as sensor in LimaCharlie
 ![image](https://github.com/user-attachments/assets/fe5da546-22d0-45eb-addc-3cf88159b503)
 
-Lazagne Github
-https://github.com/AlessandroZ/LaZagne
+### Step 3 - Download Lazagne to emulate attacks
+
+[Lazagne Github](https://github.com/AlessandroZ/LaZagne)
 
 Lazagne
 ![image](https://github.com/user-attachments/assets/949d6625-43ae-475a-ae59-3296b74a86b3)
