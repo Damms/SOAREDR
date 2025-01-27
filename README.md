@@ -46,7 +46,9 @@ On you windows server navigate to LimaCharlie and download the installer. https:
 
 Open powershell navigate to the installer and install via the below command
 
+```
 hcp_win_x64_release_<sensor_version>.msi -i <installation_key>
+```
 
 You can get the installation key from the LimaCharlie 
 
@@ -64,17 +66,67 @@ Download Lazagne using the github link below, Lazagne will be used to perform pa
 
 [Lazagne Github](https://github.com/AlessandroZ/LaZagne)
 
+Run the Lazagne exe to run the password harvesting attack and generate events.
+
 Lazagne
 ![image](https://github.com/user-attachments/assets/949d6625-43ae-475a-ae59-3296b74a86b3)
+
+### Step 4 - Create detection rule in LimaCharlie
+
+In LimaCharlie navigate to the timeline and view the security event that was generated and look at the details captured, we will use some of these details to write a detection rule.
 
 Events
 ![image](https://github.com/user-attachments/assets/9655ce1c-0072-42b7-87e9-ed21b3a97d79)
 
+Navigate to automations > D&R Rules in LimaCharlie and create a rule, below is the rule.
+
+Detect:
+```
+events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+op: and
+rules:
+  - op: is windows
+  - op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: event/FILE_PATH
+      value: LaZagne.exe
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: LaZagne
+    - case sensitive: false
+      op: is
+      path: event/HASH
+      value: '3cc5ee93a9ba1fc57389705283b760c8bd61f35e9398bbfa3210e2becf6d4b05'
+  ```
+
+Respond:
+```
+- action: report
+  metadata:
+    author: MyDFIR
+    description: TEST - Detects Lazagne Usage
+    falsepositives:
+    - ToTheMoon
+    level: high
+    tags:
+    - attack.credential_access
+  name: MyDFIR - HackTool - Lazagne
+```
+
 Create D&R Rule
 ![image](https://github.com/user-attachments/assets/f8a10531-0bdf-44af-88e4-32fe3c309a9d)
 
+Once we create the detection rule we can test the rule by copying the content of the security event we generated earlier.
+
 Test D&R Rule
 ![image](https://github.com/user-attachments/assets/2a9620d7-938a-42d3-a9be-f2512683cd6a)
+
+Now to confirm the detection is running as expected, head over to detections in LimaCharlie and we should see the events which is detected by the rule we just created.
 
 D&R Detection
 ![image](https://github.com/user-attachments/assets/e90d9c8c-6513-42c6-9eb6-394411e533b9)
