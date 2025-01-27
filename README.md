@@ -4,7 +4,7 @@ This project is based on the resources provided by [@MyDFIR](https://www.mydfir.
 ## Objective
 In this project I will grow my cybersecurity skill set by integrating SOAR and EDR to automate security workflows.
 
-In this project, I will create a detection rule that triggers whenever Lazagne, a credential-harvesting software, runs on an endpoint. When the event is detected, an alert will be sent via Slack and email, prompting users to decide whether to isolate the affected machine. If isolation is selected, an automated workflow will then run to disconnect the machine from the rest of the network.
+In this project, I will create a detection rule in LimaCharlie that triggers whenever Lazagne, a credential-harvesting software, runs on an endpoint. When the event is detected, an alert will be sent via Slack and email, prompting users to decide whether to isolate the affected machine. If isolation is selected, an automated workflow will then run to disconnect the machine from the rest of the network.
 
 ![image](https://github.com/user-attachments/assets/60f03015-0484-440f-8699-e96d7f6717e4)
 
@@ -146,7 +146,7 @@ Create Output to Tines Webhook
 Check detection events coming through to Tines
 ![image](https://github.com/user-attachments/assets/445b4780-8f57-4ace-a617-a2db92ec39d9)
 
-### Step 7 - Connect LimaCharlie to Tines
+### Step 7 - Connect Slack to Tines
 
 - Create connection to Slack via Tines
 
@@ -199,6 +199,11 @@ Check detection events coming through to Tines
 - Re-emit user prompt and check API is Isolating endpoint
 
 ![image](https://github.com/user-attachments/assets/abcc9e69-bfa6-48b0-83cb-7fdbbb21215c)
+
+- Select isolate maching in prompt
+
+![image](https://github.com/user-attachments/assets/107fd195-41f5-482d-b93d-5ce88cb4c954)
+
 
 - Check LimaCharlie for endpoint status
 
