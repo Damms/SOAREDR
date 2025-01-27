@@ -163,28 +163,33 @@ Check detection events coming through to Tines
 ### Step 9 - Add event details to user prompt and slack message
 
 - Open events in Tines to get name of fields we want to include in message
+
 ![image](https://github.com/user-attachments/assets/d34c0e48-4ed7-4db2-a806-3e051bfcc6a6)
 
 - Add details to message
+
 ![image](https://github.com/user-attachments/assets/b2f040f9-7f93-4136-b824-638453efac5e)
 
 - Test Slack message with Details
+
 ![image](https://github.com/user-attachments/assets/496bdbca-8ff1-4cd6-a5e7-4fe72a8952ef)
 
 - Setup Trigger if User prompt selects dont isolate which will trigger a slack message
+
 ![image](https://github.com/user-attachments/assets/0cec6d78-3fde-494b-a47f-61cfef24ac91)
 
 ### Step 10 - Create automation step to isolate machine va LimaCharlie
 
 - Create API request to isolate computer in LimaCharlie using sensor id - you must also create a Credential in Tines using LimaCharlie API Key
+
 ![image](https://github.com/user-attachments/assets/3e4cc0ea-1aad-47a3-a744-1632c8d7aef3)
 
 
 - Re-emit user prompt and check API is Isolating endpoint
+
 ![image](https://github.com/user-attachments/assets/28bcda53-437b-44ad-917f-15c482a0b59a)
 
 ![image](https://github.com/user-attachments/assets/f9a15fe5-6370-426c-a2aa-c1bf8b399871)
-
 
 
 Now it has isolated go into machine and try ping to validate machine is isolated
